@@ -15,31 +15,16 @@ function nowServing (line)
   }
 }
 
-
-function currentLine(katzDeliLine)
-{
-
-    var i = 0
-    var length = katzDeliLine.length
-       do {
-            return "The line is currently: " +(i + 1)+ ". " +katzDeliLine[i]+ ","
-            i++
-        }
-while (i < length)
-}
-
-
-/*
-  if (katzDeliLine.length === 0){
-    return "The line is currently empty.";
+function currentLine(line) {
+  if (!line.length) {
+    return "The line is currently empty."
   }
-  else
-  { 
-    var i = 0
-       do {
-            return "The line is currently: " +(i + 1)+ ". " +katzDeliLine[i]+ ","
-            i = i + 1;
-        }
-while (i > katzDeliLine.length())
-}
-*/
+
+  const numbersAndNames = []
+
+  for (let i = 0, l = line.length; i < l; i++) {
+    numbersAndNames.push(`${i + 1}. ${line[i]}`)
+  }
+
+  return `The line is currently: ${numbersAndNames.join(', ')}`
+};
